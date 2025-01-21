@@ -27,7 +27,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST"){
     $password = trim($_POST['password']);
 
 
-    if(empty($user_name) || empty($password)){
+    if(empty($user_name) && empty($password)){
 
             $user_name_error = "User name is required";
 
@@ -99,6 +99,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST"){
                 <button type="submit">Login</button>
             </div>
         </form>
+        <p>Don't have an account? <a href="user-register.php">Register</a></p>
     </div>
 
 </body>
