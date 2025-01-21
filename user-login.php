@@ -30,8 +30,6 @@ if($_SERVER ["REQUEST_METHOD"] == "POST"){
     if(empty($user_name) && empty($password)){
 
             $user_name_error = "User name is required";
-            
-            $password_error = "Password is required";
 
             $error = true;
 
