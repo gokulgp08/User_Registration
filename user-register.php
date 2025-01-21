@@ -1,24 +1,40 @@
 <?php
     $con = mysqli_connect("localhost","root","" ,"registered_users");
+
     if ($con == false) {
+
             die("Connection Error". mysqli_connect_error());
-        }
+
+    }
 
         
     $first_name = "";
+
     $last_name = "";
+    
     $email = "";
+
     $phone = "";
+
     $user_name = "";
+
     $password = "";
+
     $confirm_password = "";
 
+
     $first_name_error = "";
+
     $last_name_error = "";
+
     $email_error = "";
+
     $phone_error = "";
+
     $user_name_error = "";
+
     $password_error = "";
+    
     $confirm_password_error = "";
 
     $error = false;
