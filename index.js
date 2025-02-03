@@ -33,7 +33,9 @@ const setSuccess = element => {
 };
 
 const isValidEmail = email => {
+
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
     return re.test(String(email).toLowerCase());
 }
 const validateInputs = () => {
@@ -79,18 +81,36 @@ const validateInputs = () => {
     }
 
     if(passwordValue === '') {
+
         setError(password, 'password is required');
+
     }else if (passwordValue.length < 6) {
+
         setError(password, 'password must be 6 character');
-    } else {
+
+    } else if (!/(?=.*[A-Z])/.test(passwordValue)) {
+
+        setError(password, 'Password must contain at least one uppercase letter');
+
+    } else if (!/(?=.*\d)/.test(passwordValue)) {
+
+        setError(password, 'Password must contain at least one number');
+
+    }else {
+
         setSuccess(password);
     }
 
     if(confirmpasswordValue === '') {
+
         setError(confirmpassword, 'please confirm your password');
+
     }else if (passwordValue !== confirmpasswordValue) {
+
         setError(confirmpassword, 'password dosent match');
+
     }else {
+        
         setSuccess(confirmpassword);
     }
 
