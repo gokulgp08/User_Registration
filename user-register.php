@@ -10,39 +10,39 @@
         
 
 
-    // if($_SERVER ["REQUEST_METHOD"] == "POST"){
+    if($_SERVER ["REQUEST_METHOD"] == "POST"){
 
-    //     $first_name = trim($_POST['first_name']);
+        $first_name = trim($_POST['first_name']);
 
-    //     $last_name = trim($_POST['last_name']);
+        $last_name = trim($_POST['last_name']);
 
-    //     $email = trim($_POST['email']);
+        $email = trim($_POST['email']);
 
-    //     $phone = trim($_POST['phone']);
+        $phone = trim($_POST['phone']);
 
-    //     $user_name = trim($_POST['user_name']);
+        $user_name = trim($_POST['user_name']);
 
-    //     $password = trim($_POST['password']);
+        $password = trim($_POST['password']);
 
-    //     $confirm_password = trim($_POST['confirm_password']);
-
-
+        $confirm_password = trim($_POST['confirm_password']);
 
 
-    //     $sql = "INSERT INTO users (first_name, last_name, email, phone_number, user_name, password) 
-    //             VALUES ('$first_name', '$last_name', '$email', '$phone', '$user_name', '$password')";
 
-    //     if (mysqli_query( $con, $sql)) {
 
-    //         echo "User registered successfully";
+        $sql = "INSERT INTO users (first_name, last_name, email, phone_number, user_name, password) 
+                VALUES ('$first_name', '$last_name', '$email', '$phone', '$user_name', '$password')";
 
-    //     } else {
+        if (mysqli_query( $con, $sql)) {
 
-    //         echo "Error registering user". mysqli_error($con);
-    //     }
+            echo "User registered successfully";
 
-    //     mysqli_close( $con );
-    // }
+        } else {
+
+            echo "Error registering user". mysqli_error($con);
+        }
+
+        mysqli_close( $con );
+    }
     
 
 ?>
